@@ -1,7 +1,5 @@
 # vue-storybook-demo
 
-> A Vue.js project
-
 ## Build Setup
 
 ``` bash
