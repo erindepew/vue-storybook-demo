@@ -4,23 +4,31 @@ import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import MyButton from './MyButton.vue';
-import Welcome from './Welcome.vue';
+import Book from './../components/Book.vue';
 
-storiesOf('Welcome', module).add('to Storybook', () => ({
-  components: { Welcome },
-  template: '<welcome :showApp="action" />',
-  methods: { action: linkTo('Button') },
-}));
+import Bookshelf from './../components/Bookshelf.vue';
 
-storiesOf('Button', module)
-  .add('with text', () => ({
-    components: { MyButton },
-    template: '<my-button @click="action">Hello Button</my-button>',
-    methods: { action: action('clicked') },
+storiesOf('Book', module)
+  .add('active', () => ({
+    components: { Book },
+    template: '<book :active="true" />',
   }))
-  .add('with some emoji', () => ({
-    components: { MyButton },
-    template: '<my-button @click="action">😀 😎 👍 💯</my-button>',
-    methods: { action: action('clicked') },
+  .add('inactive', () => ({
+    components: { Book },
+    template: '<book :active="false" />',
+  }));
+
+
+  storiesOf('Bookshelf', module)
+  .add('default', () => ({
+    components: { Bookshelf, Book },
+    template: '<bookshelf> <book :active="true"/> <book :active="true"/> </bookshelf>',
+  }))
+  .add('default with inactive books', () => ({
+    components: { Bookshelf, Book },
+    template: '<bookshelf> <book :active="true"/> <book :active="true"/> </bookshelf>',
+  }))
+  .add('empty', () => ({
+    components: { Bookshelf, Book },
+    template: '<bookshelf> </bookshelf>',
   }));
