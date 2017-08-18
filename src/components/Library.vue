@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="$style.library">
     <Bookshelf  v-for="(books, index) in readingList" :books="books.books" :key="index" />
   </div>
 </template>
@@ -43,3 +43,16 @@ export default {
   }
 }
 </script>
+
+<style module>
+  .library {
+    background-color: #e2d8d9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+</style>
+
+

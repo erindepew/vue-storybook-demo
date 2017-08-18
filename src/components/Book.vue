@@ -38,7 +38,6 @@ export default {
 	width: 130px;
 	height: 200px;
 	display: inline-block;
-	float: left;
 	margin: 10px 20px;
 }
 
