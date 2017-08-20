@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.library">
-    <Bookshelf  v-for="(books, index) in readingList" :books="books.books" :key="index" />
+    <Bookshelf  v-for="(books, index) in readingList" :books="books.books" :name="books.name" :active="books.active" :key="index" />
   </div>
 </template>
 
@@ -15,14 +15,14 @@ export default {
     return {
       readingList: [
         {
-          name: 'Sci-fi',
+          name: 'Science-fiction',
           active: true,
           books: [
             {
             title: 'Seveneves',
             author: 'Neil Stephenson',
             image: 'Seveneves.jpg',
-            active: true
+            active: false
           },
             {
               title: 'The Martian',
@@ -34,6 +34,30 @@ export default {
               title: 'The Three Body Problem',
               author: 'Liu Cixin',
               image: 'Three_Body_Problem.jpg',
+              active: true
+            }
+          ]
+        },
+        {
+          name: 'Non-fiction',
+          active: false,
+          books: [
+            {
+              title: 'Making Ideas Happen',
+              author: 'Scott Belsky',
+              image: 'Making_Ideas_Happen.jpg',
+              active: true
+            },
+            {
+              title: 'The Lost City of Z',
+              author: 'David Grann',
+              image: 'Lost_City_Z.jpg',
+              active: true
+            },
+            {
+              title: 'The Alphabet and the Algorithm',
+              author: 'Mario Carpo',
+              image: 'Alphabet_Algorithm.jpg',
               active: true
             }
           ]
@@ -52,6 +76,7 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: auto;
   }
 </style>
 

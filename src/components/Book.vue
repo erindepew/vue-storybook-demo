@@ -1,6 +1,6 @@
 <template>
-	<div :class="$style.book">
-		<img :src="imageUrl" :class="$style.bookImage" />
+	<div :class="[{ inactive: !active}, $style.book ]">
+		<img :src="imageUrl" :class="$style.bookImage"/>
 		<h2 :class="$style.title" >{{title}}</h2>
 		<p :class="$style.author" >{{author}}</p>
 	</div>
@@ -33,31 +33,45 @@ export default {
 </script>
 
 
-<style module >
-.book {
-	width: 130px;
-	height: 200px;
-	display: inline-block;
-	margin: 10px 20px;
-}
+<style module lang="scss">
+  .book {
+    width: 195px;
+    height: 300px;
+    display: inline-block;
+    margin: 0 20px;
+    text-align: left;
+  }
 
 .bookImage {
-	width: 140px;
-	height: 200px;
 	object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .title {
 	font-family: "Helvetica Neue", Helvetica;
-	font-size: 14px;
+	font-size: 16px;
 	width: 100%;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
+  color: #2a2a2a;
+  margin: 10px 0 0;
 }
 
 .author {
 	font-family: "Helvetica Neue", Helvetica;
-	font-size: 12px;
+	font-size: 13px;
+  margin-top: 5px;
+  color: #2a2a2a;
 }
+</style>
+
+
+<style>
+
+  .inactive {
+    opacity: 0.5;
+  }
+
 </style>
