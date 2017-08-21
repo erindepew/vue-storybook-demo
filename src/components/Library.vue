@@ -6,13 +6,14 @@
 
 <script>
 import Bookshelf from '@/components/Bookshelf'
-import mockData from '@/mockData';
+import { mockData } from '@/mockData';
 export default {
   name: 'library',
   components: {
     Bookshelf
   },
   data () {
+    debugger;
     return {
       readingList: mockData,
     }

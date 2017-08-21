@@ -7,6 +7,7 @@
 				:image="book.image"
 				:active="book.active"
 				:key="index" />
+			<h3 :class="$style.emptyState" v-if="empty"> Looks like your shelf is empty! </h3>
 	</div>
 </template>
 
@@ -28,10 +29,13 @@ export default {
       type: Boolean,
     }
   },
-  beforeCreated() {
-    debugger;
-  }
+	computed: {
+  	empty() {
+  		debugger;
+  		return this.books.length == 0;
+		}
 
+	}
 }
 </script>
 
@@ -53,8 +57,16 @@ export default {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin: 0 0 20px 20px;
-  font-family: "Helvetica-Neue", Helvetica;
+  font-family: "Helvetica-Neue", Helvetica, sans-serif;
 
+}
+
+.emptyState {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 24px;
+	width: 100%;
+	color: #999;
+	margin-top: 100px;
 }
 </style>
 
