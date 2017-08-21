@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'book',
+  name: 'Book',
   props: {
 		active: {
 			type: Boolean,
@@ -33,7 +33,7 @@ export default {
 </script>
 
 
-<style module lang="scss">
+<style module>
   .book {
     width: 195px;
     height: 300px;

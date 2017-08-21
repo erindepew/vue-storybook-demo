@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import Book from '@/components/Book'
+import Book from './Book.vue'
 export default {
-  name: 'bookshelf',
+  name: 'Bookshelf',
   components: {
     Book
   },
@@ -28,6 +28,10 @@ export default {
       type: Boolean,
     }
   },
+  beforeCreated() {
+    debugger;
+  }
+
 }
 </script>
 
